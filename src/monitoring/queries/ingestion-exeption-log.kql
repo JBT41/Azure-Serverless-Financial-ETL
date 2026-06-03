@@ -1,0 +1,8 @@
+traces
+| where timestamp > ago(7d)
+| where severityLevel >= 3 
+
+| extend CleanMessage = tostring(split(message, "File")[0])
+| summarize TotalCount = count() by CleanMessage
+| sort by TotalCount desc
+| render barchart
