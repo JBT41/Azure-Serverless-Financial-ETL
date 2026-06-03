@@ -18,7 +18,7 @@ It automates the extraction, normalisation and ingestion of Financial Data using
 
 
 
-# **Azure Function** </br>
+# **Azure Function (Compute Later)** </br>
 The Azure Function is deployed on a Flex Consumption Plan using Python 3.13. This allows event-driven execution while maintaining low operational cost. </br>
 
 The Function is triggered by a CRON timer, scheduled for 07:00 AM, daily.</br>
@@ -27,7 +27,7 @@ This design eliminates the need for VM provisioning and ensures execution-based 
 
 <img width="2547" height="787" alt="image" src="https://github.com/user-attachments/assets/f60466d1-7008-4fd7-98bb-eb3518dd45d9" />
 
-# Secure Authentication via Managed Identity
+# Secure Authentication via Managed Identity (Authentication Layer)
 Managed Identity is enabled for Secure connection to SQL Databas. A user has been created for the azure function to allow connection through **Managed Identity**
 
 <img width="2554" height="471" alt="image" src="https://github.com/user-attachments/assets/6620a37a-5300-4722-a16d-3e56e509651d" />
@@ -62,8 +62,9 @@ conn_str = (
 <img width="2085" height="159" alt="image" src="https://github.com/user-attachments/assets/6a408839-cb66-4c74-a45e-f561a1f3bc28" />
 
 
-# **Azure SQL Database** </br>
-**Azure SQL Database** is running serverless with a max storage of 32Gb, and 2 Vcores which is more than enough for a small scale personal ETL. </br>
+# **Azure SQL Database (Data Layer)** </br>
+**Azure SQL Database**
+Azure SQL Database is configured in Serverless mode, enabling automatic compute scaling and pause/resume behaviour. This reduces cost while maintaining full SQL Server compatibility </br>
 <img width="2558" height="1275" alt="image" src="https://github.com/user-attachments/assets/0a251d7d-14f3-47f4-bbbe-88752093ce1c" />
 
 # Data Model
@@ -102,7 +103,7 @@ In addition to invocation data, custom Python logging is used throughout the ETL
 
 This provides deeper debugging capability beyond invocation-level monitoring.
 
-# Custom Workbook Dashboard
+# Custom Workbook Dashboard (Observability Layer)
 
 A custom Azure Monitor Workbook dashboard was created to provide a consolidated operational view of the pipeline.</br>
 https://github.com/JBT41/Azure-Serverless-Financial-ETL/tree/main/src/monitoring/queries
