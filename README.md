@@ -105,6 +105,7 @@ This provides deeper debugging capability beyond invocation-level monitoring.
 # Custom Workbook Dashboard
 
 A custom Azure Monitor Workbook dashboard was created to provide a consolidated operational view of the pipeline.</br>
+https://github.com/JBT41/Azure-Serverless-Financial-ETL/tree/main/src/monitoring/queries
 
 This dashboard aggregates telemetry from Application Insights and presents key operational metrics such as:
 
