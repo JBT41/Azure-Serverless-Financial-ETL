@@ -1,0 +1,4 @@
+requests
+| where name == "FinanceETL"
+| summarize SuccessCount = countif(success == true), FailedCount = countif(success == false) by bin(timestamp, 24h)
+| render timechart
