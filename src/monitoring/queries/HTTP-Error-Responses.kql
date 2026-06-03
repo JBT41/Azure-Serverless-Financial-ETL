@@ -1,0 +1,11 @@
+let data = traces
+| where timestamp > ago(7d)
+| where severityLevel >= 3
+| where message contains "HTTPError"
+| extend ErrorType = extract(@"HTTPError: (\d+ Client Error: [^:]+)", 1, message)
+| extend ErrorType = iff(isempty(ErrorType), "Other", ErrorType)
+| summarize TotalCount = count() by ErrorType;
+data
+| union (data | summarize TotalCount = sum(TotalCount) | extend ErrorType = "TOTAL")
+| sort by TotalCount desc
+| render barchart
