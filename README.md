@@ -1,9 +1,11 @@
 # FinanceETL: Azure Serverless Data Pipeline
-Serverless Transaction Data Pipeline Using Azure Functions, Azure SQL, and GoCardless API, Application Insights
+Serverless Transaction Data Pipeline Using Azure Functions, Azure SQL, and GoCardless API, Application Insights</br>
 
-# Project Overview
 This project illustates a custom-built Financial ETL pipeline designed and developed around Cloud Technologies.
 It automates the extraction, normalisation and ingestion of Financial Data using GoCardLess API, Python, Azure Functions, Azure SQL
+
+<img width="1777" height="885" alt="image" src="https://github.com/user-attachments/assets/5b1abbb0-76fe-4f18-ab0f-81e8cb4ba716" />
+
 
 # Goals
 - Provision Azure SQL and build Schema
