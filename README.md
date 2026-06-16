@@ -29,6 +29,7 @@ This design eliminates the need for VM provisioning and ensures execution-based 
 
 # Secure Authentication via Managed Identity (Authentication Layer)
 Managed Identity is enabled for Secure connection to SQL Databas. A user has been created for the azure function to allow connection through **Managed Identity**
+DB connection retry logging added to handle Serverless SQL cold start times
 
 <img width="2554" height="471" alt="image" src="https://github.com/user-attachments/assets/6620a37a-5300-4722-a16d-3e56e509651d" />
 
