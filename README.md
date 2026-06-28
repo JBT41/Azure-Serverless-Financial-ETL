@@ -39,8 +39,7 @@ conn_str = (
         f"Driver={{ODBC Driver 18 for SQL Server}};"
         f"Server=tcp:{server},1433;"
         f"Database={database};"
-        f"Uid={username};"
-        f"Pwd={password};"
+        "Authentication=ActiveDirectoryMsi;"
         "Encrypt=yes;"
         "TrustServerCertificate=no;"
     )
